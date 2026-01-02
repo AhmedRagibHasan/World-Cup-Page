@@ -7,6 +7,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 .container {
     max-width: 1280px;
@@ -25,12 +29,14 @@
 
     margin: 50px auto;
 
-    border-radius: 30px;
+    border-radius: 15px;
 }
 
 
 .banner-left {
-    padding: 45px;
+    padding-left: 45px;
+
+    flex: 1;
 
 
 }
@@ -46,17 +52,17 @@
 }
 
 .banner h2 {
-    color: rgba(255, 255, 255, 1);
+    /* color: rgba(255, 255, 255, 1); */
 
     line-height: 70px;
-    
+
     font-size: 70px;
     font-weight: 600;
 
-    
-    
-    
-    
+
+
+
+
 }
 
 .banner p {
@@ -67,6 +73,11 @@
 
 .banner-right img {
     display: block;
+    
+}
+
+.banner-right {
+    flex: 1;
 }
 
 /* upcoming matches section/main section */
@@ -80,19 +91,24 @@
     gap: 20px;
     background-color: black;
     height: fit-content;
-    
+
 
 }
 
 .upcoming-matches {
     display: flex;
-    padding: 50px;
+    /* padding: 10px; */
     gap: 20px;
 }
 
 .upcoming-matches-right {
-    
+
     flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+
 }
 
 .upcoming-matches-left .btn:nth-child(1),
@@ -108,7 +124,7 @@
     border-radius: 10px;
 }
 
-.upcoming-matches-right .card img{
+.upcoming-matches-right .card img {
     height: 180px;
     width: 100%;
     border-radius: 10px 10px 0px 0px;
@@ -124,7 +140,7 @@
 
 }
 
-.upcoming-matches-right .card .h2 {
+.upcoming-matches-right .card h2 {
     margin: 15px 0;
     font-size: 18px;
     font-weight: 600;
@@ -145,3 +161,81 @@
     padding: 20px;
 }
 
+/* laptop/tab responsiveness */
+
+@media (max-width: 992px) {
+
+    /*main head banner section  */
+
+    .banner h2 {
+        font-size: 50px;
+        line-height: 50px;
+
+    }
+
+
+
+     /* upcoming matches section */
+
+    .upcoming-matches {
+        flex-direction: column;
+    }
+
+    .upcoming-matches-left {
+        flex-direction: row;
+        width: 100%;
+        background-color: transparent;
+
+
+
+    }
+
+
+
+    .upcoming-matches-left>* {
+        /* flex 1 for equal distribution in row */
+        flex: 1;
+    }
+
+
+    .upcoming-matches-left .btn:nth-child(1),
+    .upcoming-matches-left .btn:nth-child(2) {
+        border: 1px solid rgba(232, 232, 232, 1);
+    }
+
+    .upcoming-matches-right {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        
+        padding-top: 30px;
+    }
+
+    .banner-left {
+        padding-left: 0;
+    }
+
+    .banner-left p{
+        /* flex-direction: column;
+        justify-content: center; */
+
+        max-width: 100%;
+        margin-bottom: 15px auto;
+    }
+
+    /* .banner-left button {
+        width: 200px;
+    } */
+
+}
